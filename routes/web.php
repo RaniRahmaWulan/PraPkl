@@ -40,15 +40,17 @@ Route::resource('jurusan', JurusanController::class);
 // route nilai
 Route::resource('nilai', NilaiController::class);
 
-Route::group(['prefix' => 'admin' ,'middleware' => ['auth']],
-function (){
-    Route::get('/u', function (){
-        return view('admin.index');
-    });
-    Route::resource('siswa', SiswaController::class);
-    // Route::resource('jurusan', JurusanController::class);
-    // Route::resource('nilai', NilaiController::class);
-    Route::resource('wali', WaliController::class);
-    Route::resource('guru', GuruController::class);
+// Route::group(['prefix' => 'admin' ,'middleware' => ['auth']],
+// function (){
+//     Route::get('/u', function (){
+//         return view('admin.index');
+//     });
+//     Route::resource('siswa', SiswaController::class);
+//     // Route::resource('jurusan', JurusanController::class);
+//     // Route::resource('nilai', NilaiController::class);
+//     Route::resource('wali', WaliController::class);
+//     Route::resource('guru', GuruController::class);
     
-});
+// });
+
+Route::resource('wali', WaliController::class);
